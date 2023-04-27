@@ -1,0 +1,23 @@
+{
+  "guid": "BB15A9D5-CC37-4545-9BDE-26010538F07E",	
+  "name": "dpcpp-bundle-adjustment",
+  "categories": ["Toolkit/oneAPI Direct Programming/C++SYCL"],
+  "description": "Bundle Adjustment used in robotic to jointly optimize the parameters of a 3D scene and the camera parameters that captured the images of that scene, migrated from CUDA implementation, use DPC++ and Intel MKL to handle all computation, verified on Intel CPU and GPU",
+  "toolchain": [ "dpcpp" ],
+  "languages": [ { "cpp": {} } ],
+  "targetDevice": [ "CPU", "GPU" ],
+  "os": [ "linux" ],
+  "builder": [ "cmake" ],
+  "ciTests": {
+    "linux": [{
+      "steps": [
+        "mkdir build",
+        "cd build",
+        "cmake ..",
+        "make",
+        "make run"
+      ]
+    }]
+  },
+  "expertise": "Reference Designs and End to End"
+}

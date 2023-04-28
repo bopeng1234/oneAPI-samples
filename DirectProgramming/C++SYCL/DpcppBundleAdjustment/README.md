@@ -6,7 +6,7 @@ The `dpcpp-bundle-adjustment` sample is Bundle Adjustment used in robotic to joi
 
 | Area                      | Description
 |:---                       |:---
-| What you will learn       | How to combine Intel® MKL Library and Intel® oneAPI Base Toolkit (Base Kit) to offload the computation of a complex workload to CPU or GPU
+| What you will learn       | How to combine Intel® MKL Library and Intel® oneAPI Base Toolkit (Base Kit) to offload the computation of a complex workload (bundle adjustment) to CPU or GPU
 | Time to complete          | 30 minutes
 | Category                  | Reference Designs and End to End
 
@@ -20,7 +20,7 @@ The `dpcpp-bundle-adjustment` sample is Bundle Adjustment used in robotic to joi
 |:---                       |:---
 | OS                        | Ubuntu* 22.04
 | Hardware                  | Skylake with GEN9 (or newer) <br>  Intel® Iris® X<sup>e</sup> graphics
-| Software                  | Eigen (3.4.0 or newer), OpenCV (4.1.0 or newer) and Intel® oneAPI Base Toolkit (2021.2 or newer)
+| Software                  | Eigen (3.4.0 or newer), OpenCV (4.1.0 or newer) and Intel® oneAPI Base Toolkit (2022.2 or newer)
 
 ## Set Environment Variables
 

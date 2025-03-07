@@ -1,0 +1,16 @@
+model:
+  name: default_model_name
+  framework: pytorch_fx
+  inputs: []
+  outputs: []
+  backend: default
+  quant_format: default
+  domain: auto
+device: cpu
+evaluation:
+  accuracy:
+    metric:
+      topk: 1
+    dataloader: null
+  performance:
+    dataloader: null

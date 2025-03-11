@@ -7,8 +7,28 @@ requires-python = ">=3.11"
 dependencies = [
     "ipykernel>=6.29.5",
     "matplotlib>=3.10.1",
+    "neural-compressor==3.1.1",
     "notebook>=7.3.2",
     "numpy==1.26.4",
     "tensorflow-hub>=0.16.1",
     "uv>=0.6.5",
+]
+
+[dependency-groups]
+tensorflow = [
+    "intel-extension-for-tensorflow[cpu]==2.15",
+    "onnxruntime==1.19.2",
+]
+
+tensorflow-gpu = [
+    "intel-extension-for-tensorflow[xpu]==2.15.0.2",
+    "intel-optimization-for-horovod>=0.28.1.6",
+]
+
+[tool.uv]
+conflicts = [
+    [
+      { group = "tensorflow" },
+      { group = "tensorflow-gpu" },
+    ],
 ]

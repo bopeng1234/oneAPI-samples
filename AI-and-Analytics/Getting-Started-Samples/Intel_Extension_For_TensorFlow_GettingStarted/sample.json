@@ -13,17 +13,17 @@
 	"ciTests": {
 		"linux": [{
 			"env": [
-				"source /intel/oneapi/intelpython/bin/activate",
-				"conda activate tensorflow-gpu",
 				"pip install uv",
-				"uv python pin $(which python)",
-				"uv venv --system-site-packages",
 				"uv sync",
-				"uv run ipython kernel install --user --name=tensorflow-gpu"
+				"uv run ipython kernel install --user --name=tensorflow-gpu",
+				"uv run ipython kernel install --user --name=tensorflow"
 			],
 			"id": "itex_sample_test",
 			"steps": [
-				"uv run jupyter nbconvert --ExecutePreprocessor.enabled=True --ExecutePreprocessor.kernel_name=tensorflow-gpu --to notebook --execute ResNet50_Inference.ipynb --output ResNet50_Inference.nbcovert.gpu.ipynb"
+				"uv sync --group tensorflow-gpu",
+				"uv run jupyter nbconvert --ExecutePreprocessor.enabled=True --ExecutePreprocessor.kernel_name=tensorflow-gpu --to notebook --execute ResNet50_Inference.ipynb --output ResNet50_Inference.nbcovert.gpu.ipynb",
+				"uv sync --group tensorflow",
+				"uv run jupyter nbconvert --ExecutePreprocessor.enabled=True --ExecutePreprocessor.kernel_name=tensorflow --to notebook --execute ResNet50_Inference.ipynb --output ResNet50_Inference.nbcovert.cpu.ipynb"
 			]
 		}]
 	},
